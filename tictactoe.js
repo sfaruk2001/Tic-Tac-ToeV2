@@ -50,6 +50,7 @@ function Player(mark, name, player_num) {
     }
 
    const setName = (newName) => {
+        //In case we need to give default name
         if (newName === '') {
             if (player_num === 1) {
                 newName = 'Player 1';
@@ -67,7 +68,7 @@ function Player(mark, name, player_num) {
 function gameController() {
     let player1 = Player('X', 'Player 1', 1);
     let player2 = Player('O', 'Player 2', 2);
-    let gameOver = false;
+    let isGameOver = false;
     let isTied = false;
     let activePlayer = player1;
 
