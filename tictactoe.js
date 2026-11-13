@@ -38,4 +38,46 @@ let gameBoard = (function GameBoard() {
     return { getBoard, inputMark, printBoard, isFilled };
 })();
 
+//player_num denotes if 1st or 2nd player
+function Player(mark, name, player_num) {
+
+    const getMark = () => {
+        return mark;
+    }
+
+    const getName = () => {
+        return name;
+    }
+
+   const setName = (newName) => {
+        if (newName === '') {
+            if (player_num === 1) {
+                newName = 'Player 1';
+            } else {
+                newName = 'Player 2';
+            }
+        } else {
+            name = newName;
+        }
+    }
+
+    return {getMark, getName, setName};
+}
+
+function gameController() {
+    let player1 = Player('X', 'Player 1', 1);
+    let player2 = Player('O', 'Player 2', 2);
+    let gameOver = false;
+    let isTied = false;
+    let activePlayer = player1;
+
+    let winCombos = [[0, 1, 2], []];
+
+    return {};
+
+}
+
+
+
+
 
